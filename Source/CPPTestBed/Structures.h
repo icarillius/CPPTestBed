@@ -4,33 +4,38 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SingleSignal.generated.h"
+#include "Structures.generated.h"
 
-// declare delegates
+USTRUCT(BlueprintType)
+struct FCharacterInfo
+{
+	GENERATED_USTRUCT_BODY()
 
+	UPROPERTY(EditAnywhere)
+	FString Name;
+
+	UPROPERTY(EditAnywhere)
+	int Age;
+
+
+};
 
 UCLASS()
-class CPPTESTBED_API ASingleSignal : public AActor
+class CPPTESTBED_API AStructures : public AActor
 {
 	GENERATED_BODY()
 	
+	
 public:	
 	// Sets default values for this actor's properties
-	ASingleSignal();
-	
+	AStructures();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	UPROPERTY()
-	class UMyActorComponent* ActorComponent;
-
 
 };
