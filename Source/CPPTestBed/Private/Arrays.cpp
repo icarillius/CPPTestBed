@@ -31,16 +31,6 @@ void AArrays::BeginPlay()
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, FString::Printf(TEXT("Key %i Item %s"), Elem.Key,
 			*Elem.Value));
 	}
-	/*
-		FPlatformMisc::LocalPrint(
-			*FString::Printf(
-				TEXT("(%d, \"%s\")\n"),
-				Elem.Key,
-				*Elem.Value
-			)
-		);
-	}
-	*/
 }
 
 // Called every frame
