@@ -20,7 +20,7 @@ void UMyActorComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	CompFunction(5);
+	//CompFunction(5);
 }
 
 
