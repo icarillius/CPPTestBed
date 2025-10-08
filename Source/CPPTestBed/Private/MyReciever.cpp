@@ -42,5 +42,6 @@ void AMyReciever::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	
 }
 

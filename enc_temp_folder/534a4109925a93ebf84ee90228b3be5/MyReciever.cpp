@@ -23,6 +23,7 @@ void AMyReciever::BindtoActorDelegate(AMyDispatcher* MyDispatcter)
 	if (MyDispatcter)
 	{
 		MyDispatcter->TestDelegate.AddDynamic(this, &AMyReciever::RunBroadCast);
+		RunBroadCast();
 	}
 }
 
@@ -32,7 +33,7 @@ void AMyReciever::BeginPlay()
 	Super::BeginPlay();
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Reciever Exists")));
-	
+
 	
 }
 

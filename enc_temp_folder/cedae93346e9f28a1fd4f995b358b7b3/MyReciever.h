@@ -21,7 +21,6 @@ public:
 
 	virtual void BindtoActorDelegate(AMyDispatcher* MyDispatcter);
 
-	
 
 
 protected:
