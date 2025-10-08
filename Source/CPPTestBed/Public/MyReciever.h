@@ -19,8 +19,14 @@ public:
 	UFUNCTION()
 	void RunBroadCast();
 
-	virtual void BindtoActorDelegate(AMyDispatcher* MyDispatcter);
+	UPROPERTY(BlueprintAssignable, Category = "Events")
+	FOnDelegate TestDelegate;
 
+	//Binds
+	void BindtoActorDelegate(AMyDispatcher* MyDispatcher);
+
+	//Unbinds
+	void UnbindToActorDelegate(AMyDispatcher* MyDispatcher);
 	
 
 
