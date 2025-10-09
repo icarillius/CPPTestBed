@@ -13,8 +13,9 @@ AMyDispatcher::AMyDispatcher()
 
 void AMyDispatcher::TriggerDelegate()
 {
-	TestDelegate.Broadcast();
+	//TestDelegate.Broadcast();
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Sends Message Out")));
+	TestDelegate.Broadcast();
 
 }
 

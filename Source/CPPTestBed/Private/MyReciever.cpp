@@ -16,21 +16,26 @@ void AMyReciever::RunBroadCast()
 
 }
 
-void AMyReciever::BindtoActorDelegate(AMyDispatcher* MyDispatcter)
+void AMyReciever::BindtoActorDelegate(AMyDispatcher* MyDispatcher)
 {
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Message In")));
 
-	if (MyDispatcter)
-	{
-		MyDispatcter->TestDelegate.AddDynamic(this, &AMyReciever::RunBroadCast);
-		RunBroadCast();
-	}
+	
+	MyDispatcher->TestDelegate.AddDynamic(this, &AMyReciever::RunBroadCast);
+	//RunBroadCast();
+}
+
+void AMyReciever::UnbindToActorDelegate(AMyDispatcher* MyDispatcher)
+{
+	MyDispatcher->TestDelegate.RemoveAll(this);
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Remove From Delegate")));
 }
 
 // Called when the game starts or when spawned
 void AMyReciever::BeginPlay()
 {
 	Super::BeginPlay();
+	//AMyDispatcher* Dispatch = Cast<AMyDispatcher>(TestDelegate.AddDynamic(this, &AMyReciever::RunBroadCast); // Not sure about this. 
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("Reciever Exists")));
 
@@ -42,6 +47,5 @@ void AMyReciever::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	
 }
 
