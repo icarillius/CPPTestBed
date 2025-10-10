@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-
 #include "MyReciever.generated.h"
 
 UCLASS()

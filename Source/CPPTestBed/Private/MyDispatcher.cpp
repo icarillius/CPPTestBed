@@ -1,6 +1,4 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MyDispatcher.h"
 
 // Sets default values
@@ -13,7 +11,6 @@ AMyDispatcher::AMyDispatcher()
 
 void AMyDispatcher::TriggerDelegate()
 {
-	//TestDelegate.Broadcast();
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Sends Message Out")));
 	TestDelegate.Broadcast();
 
