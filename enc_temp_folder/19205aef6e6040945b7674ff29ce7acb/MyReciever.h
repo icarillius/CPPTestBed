@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-
+#include "MyDispatcher.h"
 #include "MyReciever.generated.h"
 
 UCLASS()
@@ -18,6 +18,15 @@ public:
 
 	UFUNCTION()
 	void RunBroadCast();
+
+	UPROPERTY(BlueprintAssignable, Category = "Events")
+	FOnDelegate TestDelegate;
+
+	//Binds
+	void BindtoActorDelegate(AMyDispatcher* MyDispatcher);
+
+	//Unbinds
+	void UnbindToActorDelegate(AMyDispatcher* MyDispatcher);
 	
 
 
