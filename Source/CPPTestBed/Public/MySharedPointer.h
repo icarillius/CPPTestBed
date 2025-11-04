@@ -28,9 +28,9 @@ public:
 	//Empty
 	TSharedPtr<FMyObject> EmptyPointer;
 	//Creates a shared new object poitner
-	TSharedPtr<FMyObject> NewPointer(FMyObject());
+	//TSharedPtr<FMyObject> NewPointer(FMyObject());
 	//Create a shared pointer from Ref
-	TSharedRef<FMyObject> NewReference(FMyObject());
+	//TSharedRef<FMyObject> NewReference(FMyObject());
 
 protected:
 	// Called when the game starts or when spawned
